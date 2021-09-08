@@ -1,12 +1,16 @@
 
 import React, { Component } from 'react';
+import Wrapper from "./components/Wrapper";
+
 
 class App extends Component {
     render() {
       return (
-        <div className="App">
+        <Wrapper>
+        
           <h1>Hello World!</h1>
-        </div>
+    
+        </Wrapper>
       );
     }
   }
