@@ -1,10 +1,9 @@
 import axios from "axios";
 
-const baseURL = "https://randomuser.me/api/?results=200&nat=us";
-
-const RandomAPI = () => {
-    return axios.get(baseURL);
-}
+const RandomAPI = {
+    searchList: function() {
+      return axios.get("https://randomuser.me/api/?results=15");
+    }
+  };
 
 export default RandomAPI;
-

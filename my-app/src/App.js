@@ -10,18 +10,27 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            stateDB: null,
+            stateDB: [],
             searchTerm: null
         };
     }
 
     componentDidMount() {
-        const randomDB = RandomAPI();
-        console.log("ComponentDidMount");
-        console.log(JSON.stringify(randomDB));
-        this.setState({
-            stateDB: randomDB
-        });
+        console.log("Start RandomAPI");
+        RandomAPI.searchList()
+        .then(res => {
+            const RandomDB = res.data.results;
+            console.log(RandomDB);
+        })
+        .catch(err => console.log(err));
+
+        // const randomDB = RandomAPI;
+        // console.log("ComponentDidMount");
+        // console.log(randomDB);
+        // console.log(JSON.stringify(randomDB));
+        // this.setState({
+        //     stateDB: randomDB
+        // });
     }
 
     // foo(inputString) {
