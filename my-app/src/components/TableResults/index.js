@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table';
 
 
 
-function TableResults() {
+function TableResults(props) {
   return (
     <Table striped bordered hover>
       <thead>
@@ -17,20 +17,18 @@ function TableResults() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Placeholder</td>
-          <td>Nick</td>
-          <td>Johnson</td>
-          <td>555-555-5555</td>
-          <td>email@email.com</td>
-        </tr>
-        <tr>
-          <td>Placeholder</td>
-          <td>Nick</td>
-          <td>Johnson</td>
-          <td>555-555-5555</td>
-          <td>email@email.com</td>
-        </tr>
+        {props.data.map((user) =>  {
+          return (
+            <tr>
+              <td>Placeholder</td>
+              <td>{user.name.first}</td>
+              <td>{user.name.last}</td>
+              <td>{user.phone}</td>
+              <td>{user.email}</td>
+            </tr>
+          )
+        }
+        )}      
       </tbody>
     </Table>
   );
