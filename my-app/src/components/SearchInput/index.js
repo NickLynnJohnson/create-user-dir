@@ -5,13 +5,27 @@ import Button from 'react-bootstrap/Button';
 
 
 function SearchInput(props) {
-  props.onInputChanged("foo");
-  return (
+  // props.onInputChanged("foo");
+  return ( 
     <Form>
-      <Form.Control type="text" placeholder="First Name" />
-      <Button variant="primary" type="submit">Submit</Button>
+      <Form.Label>Name Search</Form.Label>
+      <Form.Control type="text" placeholder="Enter name" onChange={props.searchTheTerm}/>
+      <Form.Text className="text-muted">Search by First Name</Form.Text>    
     </Form>
   );
 }
 
 export default SearchInput;
+
+
+// function SearchInput(props) {
+//   // props.onInputChanged("foo");
+//   return (
+//     <Form>
+//       <Form.Control type="text" placeholder="Search by First Name" onChange={( event ) => this.handleChange( event )} />
+//     </Form>
+//   );
+// }
+
+// export default SearchInput;
+

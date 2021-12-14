@@ -20,7 +20,7 @@ function TableResults(props) {
         {props.data.map((user) =>  {
           return (
             <tr>
-              <td>Placeholder</td>
+              <td><img alt="User's name" src={user.picture.medium}></img></td>
               <td>{user.name.first}</td>
               <td>{user.name.last}</td>
               <td>{user.phone}</td>

@@ -11,7 +11,7 @@ class App extends Component {
         super(props);
         this.state = {
             stateDB: [],
-            searchTerm: null
+            searchedStateDB: []
         };
     }
 
@@ -22,11 +22,38 @@ class App extends Component {
             const RandomDB = res.data.results;
             console.log(RandomDB);
             this.setState({
-                stateDB: RandomDB
+                stateDB: RandomDB,
+
+                // On default make the updated DB start as the originalDB so that the list shows up correctly when the page first loads
+                searchedStateDB: RandomDB
             })
         })
         .catch(err => console.log(err));
+    }
 
+    // call back function for user search entry
+    searchTheTerm(event) {
+        // capture the user entry from the form
+        let searchedTerm = event.target.value;
+
+        // have already pulled in the original DB set in the App
+        const originalDB = this.state.stateDB;
+
+        // have a new DB that will eventually become the filtered version of the original based on the user entry
+        const newSearchedDB = [];
+
+        // this says: look at the original DB, if any value in the list matches the searched Term, push it into a new DB which will be used to update the search results display
+        originalDB.filter(user => {
+            if (user.name.first === searchedTerm) {
+                newSearchedDB.push(user)
+            }
+            return newSearchedDB;
+        })
+
+        // take this new DB and update the parent DB
+        this.setState({
+            searchedStateDB: newSearchedDB
+        });
     }
 
     render() {
@@ -35,8 +62,8 @@ class App extends Component {
       return (
         <Wrapper>
             <Title></Title>
-            {/* <SearchInput onInputChanged={this.foo}></SearchInput> */}
-            <TableResults data={this.state.stateDB}/>
+            <SearchInput searchTheTerm={this.searchTheTerm}></SearchInput>
+            <TableResults data={this.state.searchedStateDB}/>
         </Wrapper> 
       );
     }
