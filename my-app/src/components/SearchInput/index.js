@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 
 
 function SearchInput(props) {
-  // props.onInputChanged("foo");
   return ( 
     <Form>
       <Form.Label>Name Search</Form.Label>
@@ -16,16 +15,3 @@ function SearchInput(props) {
 }
 
 export default SearchInput;
-
-
-// function SearchInput(props) {
-//   // props.onInputChanged("foo");
-//   return (
-//     <Form>
-//       <Form.Control type="text" placeholder="Search by First Name" onChange={( event ) => this.handleChange( event )} />
-//     </Form>
-//   );
-// }
-
-// export default SearchInput;
-

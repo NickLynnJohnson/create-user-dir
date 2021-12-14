@@ -62,7 +62,7 @@ class App extends Component {
       return (
         <Wrapper>
             <Title></Title>
-            <SearchInput searchTheTerm={this.searchTheTerm}></SearchInput>
+            <SearchInput searchTheTerm={this.searchTheTerm.bind(this)}></SearchInput>
             <TableResults data={this.state.searchedStateDB}/>
         </Wrapper> 
       );
