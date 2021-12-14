@@ -1,7 +1,5 @@
 # create-user-dir
 
-# create-user-dir
-
 ![User-Dir-Main](my-app/public/assets/images/User-Dir-Main.png?raw=true "User-Dir-Main")
 
 ![User-Dir-Search](my-app/public/assets/images/User-Dir-Search.png?raw=true "User-Dir-Search")
@@ -18,7 +16,7 @@ This application pulls a random list of users from an API and displays them. Spe
 
 ## App Demo
 
-Check it out on Github here: 
+Check it out on Github here: https://nicklynnjohnson.github.io/create-user-dir/
 
 ## Technologies Used
 
